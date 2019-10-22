@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:nagarpalika_app/model/modelmain.dart';
 
 class SecondRow_details extends StatelessWidget {
-  const SecondRow_details({Key key}) : super(key: key);
+  final List<Detail> secondary;
+  const SecondRow_details({Key key , this.secondary}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: 10,
+      itemCount: secondary.length,
       itemBuilder: (BuildContext context, int index) {
         return Card(
           elevation: 5.0,
@@ -19,15 +21,24 @@ class SecondRow_details extends StatelessWidget {
               ),
               child: Align(
                 alignment: Alignment.center,
-                child: Text('data', style: TextStyle(fontSize: 20, color: Colors.white),),
+                child: Text(secondary[index].detailTitle, style: TextStyle(fontSize: 20, color: Colors.white),),
               ),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal:8.0, vertical: 15.0),
-                child: Center(
-                  child:Text(" Mr. Mayor buda", style: TextStyle(fontSize: 20, color: Colors.black))
+                child: Align(
+                  alignment: Alignment.topLeft,
+                      child: 
+                      ListView.builder(
+                        shrinkWrap: true,
+                        itemCount: secondary[index].detailBodyItems.length,
+                        itemBuilder: (BuildContext context, int list ) {
+                     return Center(child: Text(secondary[index].detailBodyItems[list].detailBodyItemValue, textAlign: TextAlign.left ,style: TextStyle(fontSize: 20, color: Colors.black)));
+
+                        },
+                      )
+                  ),
                 ),
-              )
             ],
           ),
         );

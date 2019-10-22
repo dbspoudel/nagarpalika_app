@@ -24,6 +24,13 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
   flutter_html: ^0.11.0
+  dio_http_cache: ^0.1.1
+  dio: ^2.1.13
+  tuple: ^1.0.3
+  parse_server_sdk: 
+    git:
+      url: https://github.com/sawrose/flutter_parse_sdk 
+      path:
 
 dev_dependencies:
   flutter_test:
@@ -56,11 +63,11 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  fonts:
-    - family: copper
-      fonts:
+  # fonts:
+    #  - family: copper
+    #   fonts:
         # - asset: fonts/copper.ttf
-        - asset: fonts/copperbold.ttf
+        # - asset: fonts/copperbold.ttf
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
