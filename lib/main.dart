@@ -4,6 +4,9 @@ import 'package:flutter/services.dart';
 import 'header.dart';
 import 'screen/home_page.dart';
 
+import 'package:permission_handler/permission_handler.dart';
+import 'package:launcher_assist/launcher_assist.dart';
+
 void main(){
   SystemChrome.setEnabledSystemUIOverlays ([]);
 SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeRight]);
@@ -32,6 +35,10 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+//   var installedApps;
+//   var walpaper;
+//   bool accessStorage;
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
